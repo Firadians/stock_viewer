@@ -1,13 +1,17 @@
-abstract class StockEvent {}
+import 'package:equatable/equatable.dart';
 
-class SubscribeToStock extends StockEvent {
-  final String symbol;
-
-  SubscribeToStock(this.symbol);
+abstract class StockEvent extends Equatable {
+  @override
+  List<Object?> get props => [];
 }
 
-class StockDataReceived extends StockEvent {
-  final Map<String, dynamic> jsonData;
+class SubscribeToStocksEvent extends StockEvent {}
 
-  StockDataReceived(this.jsonData);
+class NewStockDataEvent extends StockEvent {
+  final Map<String, dynamic> data;
+
+  NewStockDataEvent(this.data);
+
+  @override
+  List<Object?> get props => [data];
 }

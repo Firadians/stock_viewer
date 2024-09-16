@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# bni_trading_app
+# Stock Trading App
 
 A new Flutter project.
 
